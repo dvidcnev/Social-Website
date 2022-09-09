@@ -1,0 +1,45 @@
+html {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+}
+body {
+    background-color: #f2f2f2;
+    font-family: sans-serif;
+}
+.rad {
+    font-size: 1.5rem;
+    padding: 45px;
+    color: #363636;
+    text-decoration: none;
+    cursor: pointer;
+}
+.rad:hover {
+    opacity: .75;
+}
+#googl {
+    height: 100px;
+}
+#fuckye {
+    height: 100%;
+    align-items: vertical;
+}
+
+#main {
+    width: 52.5%;
+}
+#picture {
+    max-height: 400px;
+}
+#main a {
+    text-decoration: none;
+    color: black;
+}
+#main a:hover {
+    opacity: .85;
+}
+.descript-text {
+    font-size: 1.35rem;
+}
+#pagination {
+    justify-content: center;
+}
