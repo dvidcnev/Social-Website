@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('user_id')->default('0');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->string('description');
             $table->string('file_path');
             $table->timestamps();

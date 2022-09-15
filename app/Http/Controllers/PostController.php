@@ -58,12 +58,15 @@ class PostController extends Controller
             $request->file->store('pictures', 'public');
 
             // Store the record, using the new file hashname which will be it's new filename identity.
-            $post = new Post([
-                "name" => $request->get('name'),
-                "description" => $request->get('description'),
-                "file_path" => $request->file->hashName(),
-                "user_id" => Auth::user()->id
-            ]);
+            $post = new Post;
+               
+            
+                $post->name = $request->get('name');
+                $post->description = $request->get('description');
+                $post->file_path = $request->file->hashName();
+                $post->user_id = Auth::id();
+            
+
             $post->save(); // Finally, save the record.
         }
 
