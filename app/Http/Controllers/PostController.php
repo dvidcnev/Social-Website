@@ -106,8 +106,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PostValidation $request, Post $post)
-    {
+    public function update(PostValidation $request, Post $post) {
         $data = $request->validated();
 
         if ($request->hasFile('file')) {
@@ -130,8 +129,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        Post::destroy($post);
+        return redirect('welcome')->with('flash_message', 'Post deleted!');
     }
 }

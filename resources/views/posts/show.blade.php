@@ -21,8 +21,20 @@
                     <p class="m-auto">{{$post->created_at}}</p>
                     @if ($post->user_id == Auth::id() )
                         
-                    <a href="{{ route('posts.edit', $post) }}"><button type="submit" class="btn btn-secondary my-3">Edit</button></a>
-                               
+                        <a href="{{ route('posts.edit', $post) }}"><button type="submit" class="btn btn-lg btn-secondary my-3">Edit</button></a>
+
+
+
+                        <form action="{{  route('delete', ['post' => $post->id]) }}" method="POST" enctype="multipart/form-data">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-lg btn-danger my-3">Delete</button>
+
+                        </form>
+
+
+
                     @endif
                 </div>
         </div>
